@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get 'auth/fitbit', as: :fitbit_login
   get 'auth/fitbit/callback', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
 end
