@@ -4,7 +4,8 @@ RSpec.describe ActivityService do
   user = User.create(
     display_name: "User1",
     uid: ENV["fitbit_uid"],
-    oauth_token: ENV["fitbit_token"]
+    oauth_token: ENV["fitbit_token"],
+    expires_at: 1469777595
   )
   context "#get_total_steps" do
     it "returns total steps" do
@@ -20,7 +21,6 @@ RSpec.describe ActivityService do
         response = connection.get_total_steps(day)
         total_steps = response["activities-steps"].first["value"]
 
-        # expect(response["activities-steps"]).to have_content(response["activities-steps"])
         expect(total_steps).to eq(expected_total_steps)
       end
     end
