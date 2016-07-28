@@ -1,1 +1,4 @@
-hello
+<%= form_tag :dashboard_index, method: :get, class: "form-inline" do %>
+<%= select_date Time.new, prefix: :date %>
+<%= submit_tag "Pick a Day" %>
+<% end  %>

@@ -8,7 +8,7 @@
         <% if current_user %>
           <li class="custom-nav"> <%= link_to "Hello, #{current_user.display_name}", user_path(current_user.id) %></li>
           <li class="custom-nav"> <%= link_to "Logout", logout_path, method: :delete %></li>
-          <li class="custom-nav"> <%= link_to "User Dashboard", dashboard_path(current_user) %></li>
+          <li class="custom-nav"> <%= link_to "User Dashboard", dashboard_index_path %></li>
         <% else %>
           <li class="custom-nav"><%= link_to "Login with Fitbit", fitbit_login_path %></li>
         <% end  %>

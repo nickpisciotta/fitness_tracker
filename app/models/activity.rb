@@ -3,6 +3,7 @@ class Activity
   def initialize(user, day)
     @_user = user
     @_day = day
+     byebug
   end
 
   def self.service
@@ -34,13 +35,14 @@ class Activity
     resting_heartrate = resting_heartrate_response["activities-heart"][0]["value"]["restingHeartRate"]
   end
 
+
   private
     def user
       @_user
     end
 
     def day
-      @_day
+      @_day["year"] + "-" + @_day["month"] + "-" + @_day["day"]
     end
 
 
