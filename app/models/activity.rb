@@ -1,9 +1,12 @@
 class Activity
 
-  def initialize(user, day)
-    @_user = user
-    @_day = day
-     byebug
+  def initialize(intial_user, initial_day)
+    @_user = initial_user
+    @_day = initial_day
+  end
+
+  def total_steps_by_day
+    Activity.total_steps_by_day(day)
   end
 
   def self.service

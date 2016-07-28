@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
   end
 
   def show
+    # /dashboard/7-26-16
   end
 
 
