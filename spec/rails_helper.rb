@@ -6,6 +6,10 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'vcr'
+require 'database_cleaner'
+require 'factory_girl_rails'
+
+DatabaseCleaner.strategy = :truncation
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -30,6 +34,14 @@ module OmniauthMacros
     })
   end
 end
+
+  def user_create
+    User.create(
+      display_name: "User1",
+      uid: ENV["fitbit_uid"],
+      oauth_token: ENV["fitbit_token"],
+      expires_at: 1469777595)
+  end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
