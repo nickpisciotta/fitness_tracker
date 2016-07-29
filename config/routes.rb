@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :dashboard, only: [:index]
 
-  get 'dashboard/:day', to: 'dashboard#show'
+  get 'dashboard/date', to: 'dashboard#show', as: :dashboard_show
 end

@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Jul 2016 23:33:50 GMT
+      - Fri, 29 Jul 2016 02:11:59 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '132'
+      - '143'
       Fitbit-Rate-Limit-Reset:
-      - '1570'
+      - '2881'
       Etag:
       - 8870226a
       Content-Language:
@@ -47,12 +47,12 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9c236e5d234ff9-DEN
+      - 2c9d0b17e4964fd5-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-minutesSedentary":[{"dateTime":"2016-07-27","value":"1440"}]}'
     http_version: 
-  recorded_at: Thu, 28 Jul 2016 23:33:50 GMT
+  recorded_at: Fri, 29 Jul 2016 02:12:00 GMT
 - request:
     method: get
     uri: https://api.fitbit.com/1/user/-/activities/minutesSedentary/date/2016-07-27/1d.json
@@ -74,7 +74,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Jul 2016 23:33:50 GMT
+      - Fri, 29 Jul 2016 02:11:59 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -86,9 +86,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '131'
+      - '142'
       Fitbit-Rate-Limit-Reset:
-      - '1570'
+      - '2881'
       Etag:
       - 8870226a
       Content-Language:
@@ -100,10 +100,10 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9c236f1c204fc9-DEN
+      - 2c9d0b197d6e5005-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-minutesSedentary":[{"dateTime":"2016-07-27","value":"1440"}]}'
     http_version: 
-  recorded_at: Thu, 28 Jul 2016 23:33:50 GMT
+  recorded_at: Fri, 29 Jul 2016 02:12:00 GMT
 recorded_with: VCR 3.0.3

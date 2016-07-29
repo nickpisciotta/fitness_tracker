@@ -1,22 +1,17 @@
 require 'rails_helper'
 
+
 RSpec.describe ActivityService do
-  user = User.create(
-    display_name: "User1",
-    uid: ENV["fitbit_uid"],
-    oauth_token: ENV["fitbit_token"],
-    expires_at: 1469777595
-  )
   context "#get_total_steps" do
     it "returns total steps" do
       VCR.use_cassette("total_steps") do
+        user = user_create
         day = "2016-07-27"
         faraday_connection = Faraday.new("https://api.fitbit.com/1/user/-/activities/")
         faraday_connection.headers["Authorization"] = "Bearer #{user.oauth_token}"
         faraday_response = faraday_connection.get("steps/date/#{day}/1d.json")
         parsed_response = JSON.parse(faraday_response.body)
         expected_total_steps = parsed_response["activities-steps"].first["value"]
-
         connection = ActivityService.new(user)
         response = connection.get_total_steps(day)
         total_steps = response["activities-steps"].first["value"]
@@ -29,6 +24,7 @@ RSpec.describe ActivityService do
   context "#get_total_calories" do
     it "returns total calories" do
       VCR.use_cassette("total_calories") do
+        user = user_create
         day = "2016-07-27"
         faraday_connection = Faraday.new("https://api.fitbit.com/1/user/-/activities/")
         faraday_connection.headers["Authorization"] = "Bearer #{user.oauth_token}"
@@ -48,6 +44,7 @@ RSpec.describe ActivityService do
   context "#get_total_distance" do
     it "returns total distance" do
       VCR.use_cassette("total_distance") do
+        user = user_create
         day = "2016-07-27"
         faraday_connection = Faraday.new("https://api.fitbit.com/1/user/-/activities/")
         faraday_connection.headers["Authorization"] = "Bearer #{user.oauth_token}"
@@ -67,6 +64,7 @@ RSpec.describe ActivityService do
   context "#get_minutes_sedentary" do
     it "returns total minutes sedentary" do
       VCR.use_cassette("total_minutes_sedentary") do
+        user = user_create
         day = "2016-07-27"
         faraday_connection = Faraday.new("https://api.fitbit.com/1/user/-/activities/")
         faraday_connection.headers["Authorization"] = "Bearer #{user.oauth_token}"
@@ -86,6 +84,7 @@ RSpec.describe ActivityService do
   context "#get_resting_heartrate" do
     it "returns resting heartrate" do
       VCR.use_cassette("resting_heartrate") do
+        user = user_create
         day = "2016-07-27"
         faraday_connection = Faraday.new("https://api.fitbit.com/1/user/-/activities/")
         faraday_connection.headers["Authorization"] = "Bearer #{user.oauth_token}"

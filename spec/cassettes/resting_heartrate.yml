@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Jul 2016 23:33:50 GMT
+      - Fri, 29 Jul 2016 02:11:59 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '130'
+      - '141'
       Fitbit-Rate-Limit-Reset:
-      - '1570'
+      - '2881'
       Etag:
       - 8bbca7ec
       Content-Language:
@@ -47,13 +47,13 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9c236fb1bd4ff9-DEN
+      - 2c9d0b1a6ac74fe1-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-heart":[{"dateTime":"2016-07-27","value":{"customHeartRateZones":[],"heartRateZones":[{"max":94,"min":30,"name":"Out
         of Range"},{"max":131,"min":94,"name":"Fat Burn"},{"max":159,"min":131,"name":"Cardio"},{"max":220,"min":159,"name":"Peak"}]}}]}'
     http_version: 
-  recorded_at: Thu, 28 Jul 2016 23:33:50 GMT
+  recorded_at: Fri, 29 Jul 2016 02:12:00 GMT
 - request:
     method: get
     uri: https://api.fitbit.com/1/user/-/activities/heart/date/2016-07-27/1d.json
@@ -75,7 +75,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Jul 2016 23:33:50 GMT
+      - Fri, 29 Jul 2016 02:12:00 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -87,9 +87,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '129'
+      - '140'
       Fitbit-Rate-Limit-Reset:
-      - '1570'
+      - '2880'
       Etag:
       - 8bbca7ec
       Content-Language:
@@ -101,11 +101,11 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9c23703f614fd5-DEN
+      - 2c9d0b1bdcd45029-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-heart":[{"dateTime":"2016-07-27","value":{"customHeartRateZones":[],"heartRateZones":[{"max":94,"min":30,"name":"Out
         of Range"},{"max":131,"min":94,"name":"Fat Burn"},{"max":159,"min":131,"name":"Cardio"},{"max":220,"min":159,"name":"Peak"}]}}]}'
     http_version: 
-  recorded_at: Thu, 28 Jul 2016 23:33:50 GMT
+  recorded_at: Fri, 29 Jul 2016 02:12:00 GMT
 recorded_with: VCR 3.0.3
