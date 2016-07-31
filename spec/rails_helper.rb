@@ -43,6 +43,17 @@ end
       expires_at: 1469777595)
   end
 
+  def create_meal_categories
+    MealCategory.create!(
+      name: "Breakfast")
+    MealCategory.create!(
+      name: "Lunch")
+    MealCategory.create!(
+      name: "Dinner")
+    MealCategory.create!(
+      name: "Snack")
+  end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

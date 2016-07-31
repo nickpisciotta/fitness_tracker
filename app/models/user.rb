@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :meals
+  has_many :meal_goals
+  has_many :activity_goals
 
   def self.from_omniauth(auth_info)
     user = where(uid: auth_info[:uid]).first_or_create do |new_user|

@@ -1,0 +1,21 @@
+<%= form_for(@meal) do |f|  %>
+
+<%= f.label :title  %>
+<%= f.text_field :title, :id => "meal_title" %>
+
+<%= f.select :quantity, options_for_select(1..10)  %>
+
+<%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.id})  %>
+
+<%= f.submit "Add Item", :id => 'meal_search' %>
+
+<% end  %>
+
+<div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <h3>Meal Search</h3>
+      <div >
+        <ul id="meal_search_results">
+        </ul>
+      </div>
+    </div>
