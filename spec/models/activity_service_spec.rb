@@ -12,6 +12,7 @@ RSpec.describe ActivityService do
         faraday_response = faraday_connection.get("steps/date/#{day}/1d.json")
         parsed_response = JSON.parse(faraday_response.body)
         expected_total_steps = parsed_response["activities-steps"].first["value"]
+
         connection = ActivityService.new(user)
         response = connection.get_total_steps(day)
         total_steps = response["activities-steps"].first["value"]

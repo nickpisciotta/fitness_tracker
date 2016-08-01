@@ -1,0 +1,46 @@
+<%= form_for(@meal) do |f|  %>
+
+<%= f.label :title, :class => "text-center"  %>
+<%= f.text_field :title, :id => "meal_title" %>
+
+<%= f.select :quantity, options_for_select(1..10)  %>
+
+<%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.id})  %>
+
+<%= f.submit "Add Item", :id => 'meal_search' %>
+
+<% end  %>
+
+<div>
+    <div>
+      <h3 class="text-center">Nutritional Info</h3>
+      <div >
+        <ul id="meal_search_results">
+        </ul>
+      </div>
+    </div>
+</div></br></br>
+
+<!-- <div class="todaysmeals"> -->
+<div class="todaysmeals col-md-8 col-md-offset-2">
+  <h3 class="text-center"> Meals Added Today </h3>
+  <table class="table table-sm">
+      <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% todays_meals(@user).each do |meal|%>
+
+      <tr class="<%= meal.title %>">
+        <td><%= meal.title %></td>
+        <td> <%= meal.quantity %></td>
+        <td> <%= link_to "Edit Entry", edit_meal_path(meal), class: "btn btn-primary"%>
+        <td> <%= link_to "Delete Entry", meal_path(meal), method: :delete, class: "btn btn-danger" %>
+      </tr>
+    <% end  %>
+
+  </table>
+</div>
