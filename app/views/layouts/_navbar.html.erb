@@ -7,7 +7,7 @@
       <ul class="nav navbar-nav navbar-left">
          <% if current_user %>
          <li class="custom-nav"> <%= link_to "New Food Entry", new_meal_path %></li>
-         <li class="custom-nav"> <%= link_to "My Goals", goal_path(current_user.goals.last) %></li>
+         <li class="custom-nav"> <%= link_to "Set Goals", new_goal_path %></li>
          <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
