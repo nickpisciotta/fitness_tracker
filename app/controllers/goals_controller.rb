@@ -10,6 +10,10 @@ class GoalsController < ApplicationController
     end
   end
 
+  def index
+    @goal = current_user.goals.last
+  end
+
   def show
     @user = current_user
     @goal = @user.goals.find_by(id: params[:id])
