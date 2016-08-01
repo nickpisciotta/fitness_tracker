@@ -11,6 +11,5 @@ class MealParamsHandler < ActiveRecord::Base
                             carbohydrates_total: params["totalCarbohydrates"],
                             protein_total:       params["totalProtein"],
                             fat_total:           params["totalFat"])
-    byebug
   end
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :dashboard, only: [:index]
 
-  resources :meals, only: [:new, :create, :edit]
+  resources :meals
 
   get 'dashboard/date', to: 'dashboard#show', as: :dashboard_show
 end
