@@ -1,6 +1,6 @@
 <%= form_for(@meal) do |f|  %>
 
-<%= f.label :title  %>
+<%= f.label :title, :class => "text-center"  %>
 <%= f.text_field :title, :id => "meal_title" %>
 
 <%= f.select :quantity, options_for_select(1..10)  %>
@@ -11,11 +11,32 @@
 
 <% end  %>
 
-<div class="col-sm-2"></div>
-    <div class="col-sm-4">
-      <h3>Meal Search</h3>
+<div>
+    <div>
+      <h3 class="text-center">Nutritional Info</h3>
       <div >
         <ul id="meal_search_results">
         </ul>
       </div>
     </div>
+</div></br></br>
+
+<!-- <div class="todaysmeals"> -->
+<div class="col-md-8 col-md-offset-2">
+  <h3 class="text-center"> Meals Added Today </h3>
+  <table class="table table-sm">
+      <tr>
+        <th>Title</th>
+        <th></th>
+      </tr>
+
+      <% todays_meals(@user).each do |meal|%>
+
+      <tr class="<%= meal.title %>"
+        <td><%= meal.title %></td>
+        <td> <%= link_to "Edit Entry", edit_meal_path(meal), class: "btn btn-primary"%>
+      </tr>
+    <% end  %>
+
+  </table>
+</div>

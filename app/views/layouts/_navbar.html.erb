@@ -4,6 +4,11 @@
      <a class="brand brand-name-landing-page navbar-left" href="/">Fitness Tracker</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+         <% if current_user %>
+         <li class="custom-nav"> <%= link_to "Enter Meal", new_meal_path %></li>
+         <% end %>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li class="custom-nav"> <%= link_to "Hello, #{current_user.display_name}", user_path(current_user.id) %></li>

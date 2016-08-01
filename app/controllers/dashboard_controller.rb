@@ -7,9 +7,7 @@ class DashboardController < ApplicationController
   end
 
   def show
-    
     @activity = Activity.new(current_user, params[:date])
-    # /dashboard/7-26-16
   end
 
 

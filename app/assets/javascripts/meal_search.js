@@ -13,14 +13,17 @@ $(document).ready(function(){
         var totalCarbohydrates = $("<li>")
         var totalProtein = $("<li>")
         var totalFat = $("<li>")
-        var postData = {meal_info: {totalCalories: data.calories}}
+        var postData = {meal_info: {totalCalories: data.calories,
+                                    totalCarbohydrates: Math.round(data.totalNutrients.CHOCDF.quantity),
+                                    totalProtein: Math.round(data.totalNutrients.FAT.quantity),
+                                    totalFat: Math.round(data.totalNutrients.PROCNT.quantity),
+                                    }}
           $.ajax({
             url: "/meals",
             method: "POST",
             dataType: "JSON",
             data: postData
-            // success: function (data) {
-            // window.location.reload()
+            // success: function (data) {}
             // }
           })
         totalCalories.text("Total Calories: " + data.calories)

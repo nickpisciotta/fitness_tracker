@@ -3,28 +3,21 @@ class MealsController < ApplicationController
   def new
     @user = current_user
     @meal = @user.meals.new
+    @meals = @user.meals.all
   end
 
   def create
     if params[:meal]
-      @user = current_user
-      @meal = @user.meals.create(initial_meal_params)
+      MealParamsHandler.set_meal_attributes(current_user, params[:meal])
     elsif params[:meal_info]
-      @user = current_user
-      @meal = @user.meals.last.update!(calorie_total: total_calorie_params)
-      redirect_to new_meal_path
+      MealParamsHandler.set_nutrition_info(current_user, params[:meal_info])
+      flash.notice = "Meal Succesfully Added"
     else
       render :new
     end
   end
 
-
-  private
-    def initial_meal_params
-      params.require(:meal).permit(:title, :meal_category_id)
-    end
-
-    def total_calorie_params
-      params[:meal_info]["totalCalories"]
-    end
+  def edit
+    @meal = current_user.meals.find_by(id: params[:id])
+  end
 end

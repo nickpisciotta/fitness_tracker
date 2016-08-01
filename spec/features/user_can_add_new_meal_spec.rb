@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User adds meatl to database" do
+RSpec.feature "User adds meal to database" do
   scenario "user searches for food" do
     user = user_create
     create_meal_categories
@@ -8,12 +8,13 @@ RSpec.feature "User adds meatl to database" do
 
     visit new_meal_path
 
-    fill_in "Title", with: "chicken"
-    select 6, from: "meal[quantity]"
+    fill_in "Title", with: "large chicken breast"
+    select 1, from: "meal[quantity]"
 
-    select "Lunch", from: "meal[meal_category_id]"
+    select "1", from: "meal[meal_category_id]"
     click_on "Add Item"
 
-
+    expect(user.meals.count).to eq(1)
+    expect(user.meals.first.meal_category_id). to eq(1)
   end
 end
