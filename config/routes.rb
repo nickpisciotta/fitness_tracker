@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   resources :meals
 
+  resources :goals
+
   get 'dashboard/date', to: 'dashboard#show', as: :dashboard_show
 end

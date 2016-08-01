@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title text-center">Add New Goal</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for(@goal) do |f| %>
+
+        <%= render partial: 'form', locals: {f: f} %>
+        <div class="form-group">
+          <%= f.submit "Save Goals", class: "btn btn-primary update-need" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

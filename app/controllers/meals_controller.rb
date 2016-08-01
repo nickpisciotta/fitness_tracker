@@ -4,6 +4,7 @@ class MealsController < ApplicationController
     @user = current_user
     @meal = @user.meals.new
     @meals = @user.meals.all
+    flash.keep(:notice)
   end
 
   def create
