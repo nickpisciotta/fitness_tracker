@@ -14,4 +14,105 @@
  *= require_self
  */
 @import "bootstrap-sprockets";
-@import "bootstrap"
+@import "bootstrap";
+
+
+progress, progress[role] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-size: auto;
+  height: 100px;
+  width: 100%;
+}
+
+.meal-progress {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+.fitness-progress {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+// The list item
+.meal {
+  margin-bottom: 1em;
+  position: relative;
+  h3 {
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Helvetica Neue", arial, sans-serif;
+    left: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 1em;
+  }
+  ::-webkit-progress-value {
+    -webkit-animation: bar-fill 2s;
+    width: 0px;
+  }
+}
+
+.fitness {
+  margin-bottom: 1em;
+  position: relative;
+  h3 {
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Helvetica Neue", arial, sans-serif;
+    left: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 1em;
+  }
+  ::-webkit-progress-value {
+    -webkit-animation: bar-fill 2s;
+    width: 0px;
+  }
+}
+
+// The background colors
+.meal-1::-webkit-progress-value {
+  background: #87CEFA;
+}
+
+.meal-1::-moz-progress-bar {
+  background: #ff9e2c;
+}
+
+.fitness-1::-webkit-progress-value {
+  background: #87CEFA;
+}
+
+.fitness-1::-moz-progress-bar {
+  background: #ff9e2c;
+}
+
+.meal-2::-webkit-progress-value {
+  background: #4ecdc4;
+}
+
+.meal-2::-moz-progress-bar {
+  background: #4ecdc4;
+}
+
+.meal-3::-webkit-progress-value {
+  background: #ff6b6b;
+}
+
+.meal-3::-moz-progress-bar {
+  background: #ff6b6b;
+}
+
+.meal-4::-webkit-progress-value {
+  background: #ff6b6b;
+}
+
+.meal-4::-moz-progress-bar {
+  background: #ff6b6b;
+}

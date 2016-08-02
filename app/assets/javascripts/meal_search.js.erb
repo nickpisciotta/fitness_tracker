@@ -1,13 +1,15 @@
 $(document).ready(function(){
   $("#meal_search").on('click', function(){
-    var mealTitle = $("#meal_title").val()
+    var mealTitle    = $("#meal_title").val()
+    var mealQuantity = $("#meal_quantity").val()
+    var mealCategoryId = $("#meal_meal_category_id").val()
     $.ajax({
       url: "https://api.edamam.com/api/nutrition-data",
       method: "GET",
       data: {app_id: "<%= ENV['edamam_app_id'] %>", app_key: "<%= ENV['edamam_app_key'] %>", ingr: mealTitle },
       dataType: "jsonp",
       success: function (data) {
-        window.location.reload()
+      if (data.totalNutrients.CHOCDF) {
         var totalCalories = $("<li>")
         var totalCarbohydrates = $("<li>")
         var totalProtein = $("<li>")
@@ -16,24 +18,29 @@ $(document).ready(function(){
                                     totalCarbohydrates: Math.round(data.totalNutrients.CHOCDF.quantity),
                                     totalProtein: Math.round(data.totalNutrients.FAT.quantity),
                                     totalFat: Math.round(data.totalNutrients.PROCNT.quantity),
+                                    title: mealTitle,
+                                    quantity: mealQuantity,
+                                    category: mealCategoryId,
                                     }}
+          $(".table")children.last.append("<tr><td>" + mealTitle + "</td><td>" + "<button href='/meal'>Delete</button>")
           $.ajax({
             url: "/meals",
             method: "POST",
             dataType: "JSON",
             data: postData
-            // success: function (data) {}
-            // }
           })
-        totalCalories.text("Total Calories: " + data.calories)
-        totalCarbohydrates.text("Total Carbohydrates: " + Math.round(data.totalNutrients.CHOCDF.quantity))
-        totalFat.text("Total Fat: " + Math.round(data.totalNutrients.FAT.quantity))
-        totalProtein.text("Total Protein: " + Math.round(data.totalNutrients.PROCNT.quantity))
-        $("#meal_search_results").append(totalCalories)
-        $("#meal_search_results").append(totalCarbohydrates)
-        $("#meal_search_results").append(totalFat)
-        $("#meal_search_results").append(totalProtein)
+        // totalCalories.text("Total Calories: " + data.calories)
+        // totalCarbohydrates.text("Total Carbohydrates: " + Math.round(data.totalNutrients.CHOCDF.quantity))
+        // totalFat.text("Total Fat: " + Math.round(data.totalNutrients.FAT.quantity))
+        // totalProtein.text("Total Protein: " + Math.round(data.totalNutrients.PROCNT.quantity))
+        // $("#meal_search_results").append(totalCalories)
+        // $("#meal_search_results").append(totalCarbohydrates)
+        // $("#meal_search_results").append(totalFat)
+        // $("#meal_search_results").append(totalProtein)
+      } else{
+        $('.ajax-flash').html("<div class='alert alert-failure'><h4>Meal Not Found!</h4></div>")
       }
+    }
     })
   })
 })

@@ -5,21 +5,11 @@
 
 <%= f.select :quantity, options_for_select(1..10)  %>
 
-<%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.id})  %>
-
-<%= f.submit "Add Item", :id => 'meal_search' %>
-
+<%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.name})  %>
+<%#= f.submit "Add Item", :id => 'meal_search' %>
 <% end  %>
 
-<div>
-    <div>
-      <h3 class="text-center">Nutritional Info</h3>
-      <div >
-        <ul id="meal_search_results">
-        </ul>
-      </div>
-    </div>
-</div></br></br>
+<button id="meal_search">Add Food</button>
 
 <!-- <div class="todaysmeals"> -->
 <div class="todaysmeals col-md-8 col-md-offset-2">

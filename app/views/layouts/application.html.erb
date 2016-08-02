@@ -10,7 +10,9 @@
 
   <body>
     <%= render 'layouts/navbar' %>
+    <div class="ajax-flash text-center">
 
+    </div>
     <% flash.each do |type, message| %>
     <div class="alert alert-<%= type %> text-center alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">

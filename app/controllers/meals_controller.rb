@@ -8,14 +8,9 @@ class MealsController < ApplicationController
   end
 
   def create
-    if params[:meal]
-      MealParamsHandler.set_meal_attributes(current_user, params[:meal])
-    elsif params[:meal_info]
-      MealParamsHandler.set_nutrition_info(current_user, params[:meal_info])
-      flash.notice = "Meal Succesfully Added"
-    else
-      render :new
-    end
+    MealParamsHandler.set_meal_attributes(current_user, params[:meal_info])
+    flash[:notice] = "Meal Added Succesfully"
+    redirect_to new_meal_path
   end
 
   def update
