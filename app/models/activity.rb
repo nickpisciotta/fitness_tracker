@@ -60,7 +60,8 @@ class Activity
     end
 
     def day
-      @_day["year"] + "-0" + @_day["month"] + "-" + @_day["day"]
+      date = @_day["year"] + "-" + @_day["month"] + "-" + @_day["day"]
+      Date.parse(date).strftime("%Y-%m-%d")
     end
 
 

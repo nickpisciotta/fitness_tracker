@@ -6,7 +6,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
          <% if current_user %>
-         <li class="custom-nav"> <%= link_to "Enter Meal", new_meal_path %></li>
+         <li class="custom-nav"> <%= link_to "New Food Entry", new_meal_path %></li>
+          <% if current_user.goals.empty? %>
+            <li class="custom-nav"> <%= link_to "My Goals", new_goal_path %></li>
+          <% else %>
+            <li class="custom-nav"> <%= link_to "My Goals", goals_path %></li>
+          <% end %>
          <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">

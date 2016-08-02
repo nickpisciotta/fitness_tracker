@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731055621) do
+ActiveRecord::Schema.define(version: 20160801202533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "goals", force: :cascade do |t|
+    t.integer "total_steps"
+    t.integer "total_calories_burned"
+    t.integer "total_calories"
+    t.integer "total_protein"
+    t.integer "total_carbohydrates"
+    t.integer "total_fat"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_goals_on_user_id", using: :btree
+  end
 
   create_table "meal_categories", force: :cascade do |t|
     t.string   "name"
@@ -46,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160731055621) do
     t.integer  "expires_at"
   end
 
+  add_foreign_key "goals", "users"
   add_foreign_key "meals", "meal_categories"
   add_foreign_key "meals", "users"
 end

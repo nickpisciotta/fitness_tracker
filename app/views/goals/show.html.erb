@@ -1,0 +1,25 @@
+<div class="goals col-md-8 col-md-offset-2">
+  <h3 class="text-center"> Your Goals </h3>
+  <table class="table table-sm">
+      <tr>
+        <th>Total Steps</th>
+        <th>Total Calories Burned</th>
+        <th>Total Calories Eaten</th>
+        <th>Total Protein</th>
+        <th>Total Carbohydrates</th>
+        <th>Total Fat</th>
+        <th></th>
+      </tr>
+
+      <tr>
+        <td> <%= @goal.total_steps %> </td>
+        <td> <%= @goal.total_calories_burned %> </td>
+        <td> <%= @goal.total_calories%> </td>
+        <td> <%= @goal.total_protein%> </td>
+        <td> <%= @goal.total_carbohydrates %> </td>
+        <td> <%= @goal.total_fat %> </td>
+        <td> <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-primary"%>
+      </tr>
+
+  </table>
+</div>

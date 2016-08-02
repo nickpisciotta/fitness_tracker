@@ -1,11 +1,10 @@
 $(document).ready(function(){
-
   $("#meal_search").on('click', function(){
     var mealTitle = $("#meal_title").val()
     $.ajax({
       url: "https://api.edamam.com/api/nutrition-data",
       method: "GET",
-      data: {app_id: "eee1746f", app_key: "181cf369eed7e36b966c9803955f10ec", ingr: mealTitle },
+      data: {app_id: "<%= ENV['edamam_app_id'] %>", app_key: "<%= ENV['edamam_app_key'] %>", ingr: mealTitle },
       dataType: "jsonp",
       success: function (data) {
         window.location.reload()
