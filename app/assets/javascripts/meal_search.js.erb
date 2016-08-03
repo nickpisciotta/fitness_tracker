@@ -10,7 +10,6 @@ $(document).ready(function(){
       data: {app_id: "<%= ENV['edamam_app_id'] %>", app_key: "<%= ENV['edamam_app_key'] %>", ingr: mealTitle },
       dataType: "jsonp",
       success: function (data) {
-        debugger
         if (data.totalNutrients.CHOCDF) {
           var postData = {meal_info: {totalCalories: data.calories,
             totalCarbohydrates: Math.round(data.totalNutrients.CHOCDF.quantity),
@@ -45,6 +44,6 @@ $(document).ready(function(){
     $(".new-meal-table").find('tr:last').append("<td>" + data.carbohydrates_total + "</td>")
     $(".new-meal-table").find('tr:last').append("<td>" + data.fat_total + "</td>")
     $(".new-meal-table").find('tr:last').append("<td><a class='btn btn-primary' href='/meals/" + data.id + "/edit'>Edit Entry<a></td>")
-    $(".new-meal-table").find('tr:last').append("<td><a class='btn btn-primary' data-method='delete' href='/meals/" + data.id + "'>Delete Entry<a></td>")
+    $(".new-meal-table").find('tr:last').append("<td><a class='btn btn-danger' data-method='delete' href='/meals/" + data.id + "'>Delete Entry<a></td>")
   }
 })
