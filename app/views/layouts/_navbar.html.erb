@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
-     <a class="brand brand-name-landing-page navbar-left" href="/">Fitness Tracker</a>
+     <!-- <a class="brand brand-name-landing-page navbar-left" href="/">Fitness Tracker</a> -->
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
@@ -14,11 +14,13 @@
           <% end %>
          <% end %>
       </ul>
+      <ul class="nav navbar-nav navbar-center">
+        <li class="custom-nav"> <%= link_to "FitMaster", root_path %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li class="custom-nav"> <%= link_to "Hello, #{current_user.display_name}", user_path(current_user.id) %></li>
+          <li class="custom-nav"> <%= link_to "Hello, #{current_user.display_name}", dashboard_index_path %></li>
           <li class="custom-nav"> <%= link_to "Logout", logout_path, method: :delete %></li>
-          <li class="custom-nav"> <%= link_to "User Dashboard", dashboard_index_path %></li>
         <% else %>
           <li class="custom-nav"><%= link_to "Login with Fitbit", fitbit_login_path %></li>
         <% end  %>

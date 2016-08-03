@@ -14,4 +14,288 @@
  *= require_self
  */
 @import "bootstrap-sprockets";
-@import "bootstrap"
+@import "bootstrap";
+
+
+progress, progress[role] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-size: auto;
+  height: 65px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.meal-progress {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+.fitness-progress {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+// The list item
+.meal {
+  margin-bottom: 1em;
+  position: relative;
+  h3 {
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Helvetica Neue", arial, sans-serif;
+    left: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 0.1em;
+  }
+  ::-webkit-progress-value {
+    -webkit-animation: bar-fill 5s;
+    width: 0px;
+  }
+}
+
+.fitness {
+  margin-bottom: 1em;
+  position: relative;
+  h3 {
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "Helvetica Neue", arial, sans-serif;
+    left: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 0.1em;
+  }
+  ::-webkit-progress-value {
+    -webkit-animation: bar-fill 2s;
+    width: 0px;
+  }
+}
+
+// The background colors
+.meal-1::-webkit-progress-value {
+  background: #87CEFA;
+}
+
+.meal-1::-moz-progress-bar {
+  background: #87CEFA;
+}
+
+.meal-2::-webkit-progress-value {
+  background: #4ecdc4;
+}
+
+.meal-2::-moz-progress-bar {
+  background: #4ecdc4;
+}
+
+.meal-3::-webkit-progress-value {
+  background: #ff6b6b;
+}
+
+.meal-3::-moz-progress-bar {
+  background: #ff6b6b;
+}
+
+.meal-4::-webkit-progress-value {
+  background: #F9C41B;
+}
+
+.meal-4::-moz-progress-bar {
+  background: #F9C41B;
+}
+
+.fitness-1::-webkit-progress-value {
+  background: #AE0202;
+  xxborder-radius: 50%;
+}
+
+.fitness-1::-moz-progress-bar {
+  background: #AE0202;
+}
+
+.fitness-2::-webkit-progress-value {
+  background: #F0AD4E;
+}
+
+.fitness-2::-moz-progress-bar {
+  background: #F0AD4E;
+}
+
+@-webkit-keyframes bar-fill {
+  0% { width: 0; }
+}
+
+@keyframes bar-fill {
+  0% { width: 0; }
+}
+
+#mast {
+ z-index: 1000;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  background: transparent;
+
+  color: blue;
+  border: none;
+}
+
+/*LOAD STATE*/
+.navbar-default .navbar-nav > li > a {
+  color: white;
+
+  font-size: 1.5em;
+  letter-spacing: 1px;
+
+}
+/*HOVER STATE*/
+.navbar-default .navbar-nav > li > a:hover {
+  color: #a8cf37;
+
+}
+
+#welcome-text {
+  margin-top: 100px;
+  font-size: 4.0em;
+}
+
+.date-select {
+  margin-top: 100px;
+  font-size: 4.0em;
+}
+
+html {
+
+  background: url("http://i.imgur.com/9rR4XsG.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+   -moz-background-size: cover;
+   background-size: cover;
+
+}
+
+.btn-app {
+  color: #a8cf37;
+  font-size: 1.3em;
+  background: transparent;
+  border: 2px solid #a8cf37;
+}
+
+.btn-app:hover{
+  background-color: #a8cf37;
+  color: black;
+}
+
+.btn-app-2:hover{
+  background-color: #a8cf37;
+  color: black;
+}
+.btn-app-1 {
+  color: #a8cf37;
+  font-size: 1.3em;
+  background: transparent;
+  border: 2px solid #a8cf37;
+  margin-left: 0.7cm;
+}
+.btn-app-2 {
+  color: #a8cf37;
+  font-size: 1.3em;
+  background: transparent;
+  border: 2px solid #a8cf37;
+  margin-left: 0.7cm;
+}
+
+.btn-app-1:hover{
+  background-color: #a8cf37;
+  color: black;
+}
+
+label.text-center.meal_title_label {
+  letter-spacing: 1.25px;
+  font-size: 1.5em;
+  margin-right: 0.25cm;
+}
+
+select#meal_quantity {
+  -webkit-appearance: menulist-button;
+  height: 25px;
+  width: 80px;
+  color: black;
+}
+
+.testing{
+  font-size: 1.5em;
+}
+
+.fitness-data {
+  font-size: 1.5em;
+}
+
+.meal_title_box {
+  color: black;
+  height: 25px;
+  margin-right: 0.5cm;
+}
+
+label.quantity_label {
+  letter-spacing: 1.25px;
+  font-size: 1.5em;
+  margin-right: 0.25cm;
+}
+
+label.meal_category_label {
+  letter-spacing: 1.25px;
+  font-size: 1.5em;
+  margin-right: 0.25cm;
+  margin-left: 0.2cm;
+}
+
+select#meal_meal_category_id {
+  -webkit-appearance: menulist-button;
+  height: 30px;
+  width: 95px;
+  color: black;
+}
+
+.calendar {
+  color: black;
+  height: 35px;
+  width: 150px;
+}
+
+.black {
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 0;
+  display: none;
+}
+
+body {
+  background: transparent;
+  font-family: 'Passion One', cursive;
+  color: white;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-center {
+  font-size: 1.6em;
+}

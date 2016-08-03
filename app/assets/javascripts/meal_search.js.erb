@@ -1,39 +1,50 @@
 $(document).ready(function(){
   $("#meal_search").on('click', function(){
-    var mealTitle = $("#meal_title").val()
+
+    var mealTitle    = $("#meal_title").val()
+    var mealQuantity = $("#meal_quantity").val()
+    var mealCategoryId = $("#meal_meal_category_id").val()
     $.ajax({
       url: "https://api.edamam.com/api/nutrition-data",
       method: "GET",
       data: {app_id: "<%= ENV['edamam_app_id'] %>", app_key: "<%= ENV['edamam_app_key'] %>", ingr: mealTitle },
       dataType: "jsonp",
       success: function (data) {
-        window.location.reload()
-        var totalCalories = $("<li>")
-        var totalCarbohydrates = $("<li>")
-        var totalProtein = $("<li>")
-        var totalFat = $("<li>")
-        var postData = {meal_info: {totalCalories: data.calories,
-                                    totalCarbohydrates: Math.round(data.totalNutrients.CHOCDF.quantity),
-                                    totalProtein: Math.round(data.totalNutrients.FAT.quantity),
-                                    totalFat: Math.round(data.totalNutrients.PROCNT.quantity),
-                                    }}
+        debugger
+        if (data.totalNutrients.CHOCDF) {
+          var postData = {meal_info: {totalCalories: data.calories,
+            totalCarbohydrates: Math.round(data.totalNutrients.CHOCDF.quantity),
+            totalProtein: Math.round(data.totalNutrients.FAT.quantity),
+            totalFat: Math.round(data.totalNutrients.PROCNT.quantity),
+            title: mealTitle,
+            quantity: mealQuantity,
+            category: mealCategoryId,
+          }}
           $.ajax({
             url: "/meals",
             method: "POST",
             dataType: "JSON",
-            data: postData
-            // success: function (data) {}
-            // }
+            data: postData,
+            success: function (data) {
+              appendData(data)
+              $('.ajax-flash').html("<div class='alert alert-success'><h4>Food Added!</h4></div>")
+            }
           })
-        totalCalories.text("Total Calories: " + data.calories)
-        totalCarbohydrates.text("Total Carbohydrates: " + Math.round(data.totalNutrients.CHOCDF.quantity))
-        totalFat.text("Total Fat: " + Math.round(data.totalNutrients.FAT.quantity))
-        totalProtein.text("Total Protein: " + Math.round(data.totalNutrients.PROCNT.quantity))
-        $("#meal_search_results").append(totalCalories)
-        $("#meal_search_results").append(totalCarbohydrates)
-        $("#meal_search_results").append(totalFat)
-        $("#meal_search_results").append(totalProtein)
+
+        } else{
+          $('.ajax-flash').html("<div class='alert alert-danger'><h4>Food Entry Not Found!</h4></div>")
+        }
       }
     })
   })
+  function appendData(data) {
+    $(".new-meal-table").find('tbody:last').append("<tr><td>" + data.title + "</td></tr>")
+    $(".new-meal-table").find('tr:last').append("<td>" + data.quantity + "</td>")
+    $(".new-meal-table").find('tr:last').append("<td>" + data.calorie_total + "</td>")
+    $(".new-meal-table").find('tr:last').append("<td>" + data.protein_total + "</td>")
+    $(".new-meal-table").find('tr:last').append("<td>" + data.carbohydrates_total + "</td>")
+    $(".new-meal-table").find('tr:last').append("<td>" + data.fat_total + "</td>")
+    $(".new-meal-table").find('tr:last').append("<td><a class='btn btn-primary' href='/meals/" + data.id + "/edit'>Edit Entry<a></td>")
+    $(".new-meal-table").find('tr:last').append("<td><a class='btn btn-primary' data-method='delete' href='/meals/" + data.id + "'>Delete Entry<a></td>")
+  }
 })

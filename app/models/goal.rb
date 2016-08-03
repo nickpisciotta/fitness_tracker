@@ -8,4 +8,7 @@ class Goal < ActiveRecord::Base
   validates :total_carbohydrates, presence: true
   validates :total_fat, presence: true
 
+
+
+
 end

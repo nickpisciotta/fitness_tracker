@@ -1,4 +1,10 @@
-<%= form_tag :dashboard_show, method: :get, class: "form-inline" do %>
-<%= select_date Time.new, prefix: :date %>
-<%= submit_tag "Pick a Day" %>
-<% end  %>
+<div class="container text-center">
+
+  <h4 class="date-select">Select A Day</h4>
+
+  <form action="dashboard/date">
+    <input type="date" name="date" class="calendar">
+    <input type="Submit" class="btn btn-app-1">
+  </form>
+
+</div>

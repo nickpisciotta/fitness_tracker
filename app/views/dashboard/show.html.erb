@@ -1,18 +1,63 @@
 <div class="container">
-  <h1>Fitness Stats</h1>
+  <div class="col-md-6 col-md-offset-0">
+    <h1 class='text-center'>Meal Stats</h1>
+    <ul class="meal-progress">
+      <li class="meal">
+        <h3>Calorie Progress:</br> <%=@meals.calorie_sum%>cals/ <%= @goals.total_calories %>cals</h3>
+        <progress class="meal-1" max="<%= @goals.total_calories %>" value="<%= @meals.calorie_sum%>">
+          <strong>Calorie Progress:</strong>
+        </progress>
+      </li>
 
-  <ul>
-    <li>Total Steps Today: <%= @activity.total_steps_by_day %> steps </li>
-    <li>Total Calories Burned Today: <%= @activity.total_calories_by_day %> calories</li>
-    <li>Total Distance Today: <%= @activity.total_distance_by_day %> miles </li>
-    <li>Total Hours Sedentary Today: <%= @activity.total_hours_sedentary%> hours </li>
-    <li>Resting Heart Rate Today: <%= @activity.resting_heart_rate_by_day %> B.P.M </li>
-  </ul>
+      <li class="meal">
+        <h3>Protein Progress:</br> <%=@meals.protein_sum%>g/ <%= @goals.total_protein %>g</h3>
+        <progress class="meal-2" max="<%= @goals.total_protein %>" value="<%= @meals.protein_sum%>">
+          <strong>Protein Progress:</strong>
+        </progress>
+      </li>
 
-  <h1>Meal Stats</h1>
-  <ul>
+      <li class="meal">
+        <h3>Carbohydrate Progress:</br> <%=@meals.carbohyrate_sum %>g/ <%=@goals.total_carbohydrates %>g</h3>
+        <progress class="meal-3" max="<%= @goals.total_carbohydrates %>" value="<%= @meals.carbohyrate_sum %>">
+          <strong>Carbohydrate Progress:</strong>
+        </progress>
+      </li>
+
+      <li class="meal">
+        <h3>Fat Progress:</br> <%= @meals.fat_sum %>g/ <%= @goals.total_fat %>g</h3>
+        <progress class="meal-4" max="<%= @goals.total_fat %>" value="<%= @meals.fat_sum %>">
+          <strong>Fat Progress:</strong>
+        </progress>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-6 col-md-offset-0">
+    <h1 class='text-center'>Fitness Stats</h1>
+    <ul class="fitness-progress">
+      <li class="fitness">
+        <h3>Total Steps Progress:</br> <%= @activity.total_steps_by_day %>/ <%= @goals.total_steps %></h3>
+        <progress class="fitness-1" max="<%= @goals.total_steps %>" value="<%= @activity.total_steps_by_day %>">
+          <strong>Total Steps Progress:</strong>
+        </progress>
+      </li>
+
+      <li class="fitness">
+        <h3>Total Calories Burned Progress:</br> <%= @activity.total_calories_by_day %>/ <%= @goals.total_calories_burned %></h3>
+        <progress class="fitness-2" max="<%= @goals.total_calories_burned %>" value="<%= @activity.total_calories_by_day %>">
+          <strong>Total Steps Progress:</strong>
+        </progress>
+      </li>
+      <li class="fitness-data">Total Distance Today: <%= @activity.total_distance_by_day %> miles </li></br>
+      <li class="fitness-data">Resting Heart Rate Today: <%= @activity.resting_heart_rate_by_day %> B.P.M </li>
+    </ul>
 
 
-  </ul>
+  </div>
+
+    <ul>
+      <li>Total Hours Sedentary Today: <%= @activity.total_hours_sedentary%> hours </li>
+    </ul>
+  </div>
 
 </div>

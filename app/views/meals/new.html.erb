@@ -1,46 +1,71 @@
-<%= form_for(@meal) do |f|  %>
+<div class="container"></br>
 
-<%= f.label :title, :class => "text-center"  %>
-<%= f.text_field :title, :id => "meal_title" %>
+  <div class="text-center">
 
-<%= f.select :quantity, options_for_select(1..10)  %>
+    <%= form_for(@meal) do |f|  %>
 
-<%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.id})  %>
+    <%= f.label :food, :class => "text-center meal_title_label"  %>
+    <%= f.text_field :title, :id => "meal_title", :class => "meal_title_box" %>
 
-<%= f.submit "Add Item", :id => 'meal_search' %>
+    <%= f.label :quantity, :class => "quantity_label" %>
+    <%= f.select :quantity, options_for_select(1..10), :class => "quantity_box"  %>
 
-<% end  %>
+    <%= f.label :meal, :class => "meal_category_label"%>
+    <%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.name}), :class => "meal_category"  %>
 
-<div>
-    <div>
-      <h3 class="text-center">Nutritional Info</h3>
-      <div >
-        <ul id="meal_search_results">
-        </ul>
-      </div>
-    </div>
-</div></br></br>
+    <% end  %></br>
+    <button id="meal_search" class='btn-app-2'>Add Food</button>
 
-<!-- <div class="todaysmeals"> -->
-<div class="todaysmeals col-md-8 col-md-offset-2">
-  <h3 class="text-center"> Food Added Today </h3>
-  <table class="table table-sm">
-      <tr>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th></th>
-        <th></th>
-      </tr>
+    <!-- <form>
+      <input type="text" name="meal_title" id="meal_title">
+      <select id="meal_quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <select id="meal_meal_category_id">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Snack">Snack</option>
+      </select>
+      <input type="Submit" class="btn btn-app-1" id="meal_search">
+    </form>
+ -->
 
-      <% todays_meals(@user).each do |meal|%>
 
-      <tr class="<%= meal.title %>">
-        <td><%= meal.title %></td>
-        <td> <%= meal.quantity %></td>
-        <td> <%= link_to "Edit Entry", edit_meal_path(meal), class: "btn btn-primary"%>
-        <td> <%= link_to "Delete Entry", meal_path(meal), method: :delete, class: "btn btn-danger" %>
-      </tr>
-    <% end  %>
 
-  </table>
+
+  </div></br></br>
+
+  <div class="todaysmeals col-md-8 col-md-offset-2">
+    <h3 class="text-center"> Food Added Today </h3>
+    <table class="table new-meal-table">
+        <tr>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Carbohydrates</th>
+          <th>Fat</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+        <% todays_meals(@user).each do |meal|%>
+
+        <tr class="<%= meal.title %>">
+          <td><%= meal.title %></td>
+          <td> <%= meal.quantity %></td>
+          <td> <%= meal.calorie_total %></td>
+          <td> <%= meal.protein_total %></td>
+          <td> <%= meal.carbohydrates_total%></td>
+          <td> <%= meal.fat_total %></td>
+          <td> <%= link_to "Edit Entry", edit_meal_path(meal), class: "btn btn-primary"%>
+          <td> <%= link_to "Delete Entry", meal_path(meal), method: :delete, class: "btn btn-danger" %>
+        </tr>
+      <% end  %>
+
+    </table>
+  </div>
 </div>

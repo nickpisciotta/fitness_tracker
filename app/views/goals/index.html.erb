@@ -12,6 +12,7 @@
       </tr>
 
       <tr>
+        <% cache do %>
         <td> <%= @goal.total_steps %> </td>
         <td> <%= @goal.total_calories_burned %> </td>
         <td> <%= @goal.total_calories%> </td>
@@ -19,6 +20,7 @@
         <td> <%= @goal.total_carbohydrates %> </td>
         <td> <%= @goal.total_fat %> </td>
         <td> <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-primary"%>
+        <% end %>
       </tr>
 
   </table>
