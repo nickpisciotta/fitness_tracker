@@ -22,7 +22,7 @@ $(document).ready(function(){
                                     quantity: mealQuantity,
                                     category: mealCategoryId,
                                     }}
-          $(".table")children.last.append("<tr><td>" + mealTitle + "</td><td>" + "<button href='/meal'>Delete</button>")
+          // $(".table")children.last.append("<tr><td>" + mealTitle + "</td><td>" + "<button href='/meal'>Delete</button>")
           $.ajax({
             url: "/meals",
             method: "POST",

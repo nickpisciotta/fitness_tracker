@@ -1,0 +1,17 @@
+<div class="black">
+
+</div>
+<section id="mast">
+
+<div class="row">
+  <div class="container text-center">
+    <h1 id="welcome-text">Welcome to Fitness Tracker</h1></br>
+    <h3>The App That Tracks Your Meals And Fitness Information</h3></br>
+
+    <% if current_user %>
+      <%= link_to "User Dashboard", dashboard_index_path, class:"btn btn-app" %>
+    <% end  %>
+  </div>
+</div>
+
+</section>
