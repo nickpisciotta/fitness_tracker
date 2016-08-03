@@ -23,7 +23,7 @@ progress, progress[role] {
           appearance: none;
   border: none;
   background-size: auto;
-  height: 75px;
+  height: 65px;
   width: 100%;
 }
 
@@ -50,7 +50,7 @@ progress, progress[role] {
     left: 1em;
     line-height: 1;
     position: absolute;
-    top: 0.5em;
+    top: 0.1em;
   }
   ::-webkit-progress-value {
     -webkit-animation: bar-fill 2s;
@@ -68,7 +68,7 @@ progress, progress[role] {
     left: 1em;
     line-height: 1;
     position: absolute;
-    top: 0.5em;
+    top: 0.1em;
   }
   ::-webkit-progress-value {
     -webkit-animation: bar-fill 2s;
@@ -164,6 +164,11 @@ progress, progress[role] {
   font-size: 4.0em;
 }
 
+.date-select {
+  margin-top: 100px;
+  font-size: 4.0em;
+}
+
 html {
 
   background: url("http://i.imgur.com/9rR4XsG.jpg") no-repeat center center fixed;
@@ -184,6 +189,19 @@ html {
   background-color: #a8cf37;
   color: black;
 }
+.btn-app-1 {
+  color: #a8cf37;
+  font-size: 1.3em;
+  background: transparent;
+  border: 2px solid #a8cf37;
+  margin-left: 0.7cm;
+}
+
+.btn-app-1:hover{
+  background-color: #a8cf37;
+  color: black;
+}
+
 .black {
   background-color: black;
   position: absolute;
@@ -200,4 +218,17 @@ body {
   background: transparent;
   font-family: 'Passion One', cursive;
   color: white;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-center {
+  font-size: 1.6em;
 }

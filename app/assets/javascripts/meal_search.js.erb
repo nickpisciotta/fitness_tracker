@@ -22,8 +22,14 @@ $(document).ready(function(){
                                     quantity: mealQuantity,
                                     category: mealCategoryId,
                                     }}
-          // $(".table")children.last.append("<tr><td>" + mealTitle + "</td><td>" + "<button href='/meal'>Delete</button>")
-          $.ajax({
+        $(".new-meal-table").find('tbody:last').append("<tr><td>" + mealTitle + "</td></tr>")
+        $(".new-meal-table").find('tr:last').append("<td>" + mealQuantity + "</td>")
+        $(".new-meal-table").find('tr:last').append("<td>" + data.calories + "</td>")
+        $(".new-meal-table").find('tr:last').append("<td>" + Math.round(data.totalNutrients.PROCNT.quantity) + "</td>")
+        $(".new-meal-table").find('tr:last').append("<td>" + Math.round(data.totalNutrients.CHOCDF.quantity) + "</td>")
+        $(".new-meal-table").find('tr:last').append("<td>" + Math.round(data.totalNutrients.FAT.quantity) + "</td>")
+        // " + mealQuantity + "</tr><tr>" + "<button href='/meal'>Delete</button>")
+           $.ajax({
             url: "/meals",
             method: "POST",
             dataType: "JSON",
@@ -38,7 +44,7 @@ $(document).ready(function(){
         // $("#meal_search_results").append(totalFat)
         // $("#meal_search_results").append(totalProtein)
       } else{
-        $('.ajax-flash').html("<div class='alert alert-failure'><h4>Meal Not Found!</h4></div>")
+        $('.ajax-flash').html("<div class='alert alert-danger'><h4>Meal Not Found!</h4></div>")
       }
     }
     })

@@ -14,6 +14,9 @@
           <% end %>
          <% end %>
       </ul>
+      <ul class="nav navbar-nav navbar-center">
+        <li class="custom-nav"> <%= link_to "FitMaster", root_path %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li class="custom-nav"> <%= link_to "Hello, #{current_user.display_name}", dashboard_index_path %></li>

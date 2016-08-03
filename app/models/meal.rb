@@ -3,13 +3,12 @@ class Meal < ApplicationRecord
   belongs_to :user
 
   def self.find_meals_by_day(user, date)
-    format_date(date)
-    user.meals.where(created_at: format_date(date).beginning_of_day..format_date(date).end_of_day)
+    parse_date(date)
+    user.meals.where(created_at: parse_date(date).beginning_of_day..parse_date(date).end_of_day)
   end
 
-  def self.format_date(date)
-    parsed_date = date["year"] + "-" + date["month"] + "-" + date["day"]
-    Date.parse(parsed_date)
+  def self.parse_date(date)
+    Date.parse(date)
   end
 
   def self.calorie_sum

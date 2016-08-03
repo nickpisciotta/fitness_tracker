@@ -1,36 +1,49 @@
-<%= form_for(@meal) do |f|  %>
+<div class="container"></br>
 
-<%= f.label :title, :class => "text-center"  %>
-<%= f.text_field :title, :id => "meal_title" %>
+  <div class="text-center">
 
-<%= f.select :quantity, options_for_select(1..10)  %>
+    <%= form_for(@meal) do |f|  %>
 
-<%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.name})  %>
-<%#= f.submit "Add Item", :id => 'meal_search' %>
-<% end  %>
+    <%= f.label :title, :class => "text-center"  %>
+    <%= f.text_field :title, :id => "meal_title" %>
 
-<button id="meal_search">Add Food</button>
+    <%= f.select :quantity, options_for_select(1..10)  %>
 
-<!-- <div class="todaysmeals"> -->
-<div class="todaysmeals col-md-8 col-md-offset-2">
-  <h3 class="text-center"> Food Added Today </h3>
-  <table class="table table-sm">
-      <tr>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th></th>
-        <th></th>
-      </tr>
+    <%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.name})  %>
 
-      <% todays_meals(@user).each do |meal|%>
-
-      <tr class="<%= meal.title %>">
-        <td><%= meal.title %></td>
-        <td> <%= meal.quantity %></td>
-        <td> <%= link_to "Edit Entry", edit_meal_path(meal), class: "btn btn-primary"%>
-        <td> <%= link_to "Delete Entry", meal_path(meal), method: :delete, class: "btn btn-danger" %>
-      </tr>
     <% end  %>
+    <button id="meal_search">Add Food</button>
 
-  </table>
+  </div></br></br>
+
+  <div class="todaysmeals col-md-8 col-md-offset-2">
+    <h3 class="text-center"> Food Added Today </h3>
+    <table class="table new-meal-table">
+        <tr>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Carbohydrates</th>
+          <th>Fat</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+        <% todays_meals(@user).each do |meal|%>
+
+        <tr class="<%= meal.title %>">
+          <td><%= meal.title %></td>
+          <td> <%= meal.quantity %></td>
+          <td> <%= meal.calorie_total %></td>
+          <td> <%= meal.protein_total %></td>
+          <td> <%= meal.carbohydrates_total%></td>
+          <td> <%= meal.fat_total %></td>
+          <td> <%= link_to "Edit Entry", edit_meal_path(meal), class: "btn btn-primary"%>
+          <td> <%= link_to "Delete Entry", meal_path(meal), method: :delete, class: "btn btn-danger" %>
+        </tr>
+      <% end  %>
+
+    </table>
+  </div>
 </div>
