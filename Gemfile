@@ -57,6 +57,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 

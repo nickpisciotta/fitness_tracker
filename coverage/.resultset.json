@@ -5,7 +5,7 @@
         1,
         null,
         1,
-        1,
+        2,
         null,
         null
       ],
@@ -43,59 +43,6 @@
         1,
         null
       ],
-      "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/controllers/meals_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
       "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/models/meal.rb": [
         1,
         1,
@@ -131,6 +78,58 @@
       "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/models/application_record.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/controllers/meals_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/models/goal.rb": [
@@ -283,10 +282,6 @@
         0,
         0
       ],
-      "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
       "/Users/nickpisciotta/turing/module3/Projects/fitness_tracker/app/models/activity.rb": [
         0,
         0,
@@ -432,6 +427,6 @@
         0
       ]
     },
-    "timestamp": 1470287397
+    "timestamp": 1470295559
   }
 }

@@ -1,18 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Meal, type: :model do
-  # context "#find_meals_by_day" do
-  #   it "finds meals by the day" do
-  #     date = "08/02/2016"
-  #     user = create(:user)
-  #     meal1 = create(:meal, user: user)
-  #     meal2 = create(:meal, user: user)
-  #     meal3 = create(:meal, user: user)
-  #     meal4 = create(:meal, created_at: Date.today.prev_day)
-  #
-  #     byebug
-  #   end
-  # end
 
   context "#calorie_sum" do
     it "calculates total calories" do

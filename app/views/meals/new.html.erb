@@ -11,7 +11,7 @@
     <%= f.select :quantity, options_for_select(1..10), :class => "quantity_box"  %>
 
     <%= f.label :meal, :class => "meal_category_label"%>
-    <%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.name}), :class => "meal_category"  %>
+    <%= f.select :meal_category_id, options_for_select(["Breakfast", "Lunch", "Dinner", "Snack"]), :class => "meal_category"  %>
 
     <% end  %></br>
     <button id="meal_search" class='btn-app-2'>Add Food</button>

@@ -64,6 +64,20 @@ end
     end
   end
 
+  module WaitForAjax
+    def wait_for_ajax
+      counter = 0
+      while page.execute_script("return $.active").to_i > 0
+        counter += 1
+        sleep(5)
+        raise "AJAX request took longer than 5 seconds." if counter >= 50
+      end
+    end
+
+    # def finished_all_ajax_requests?
+    #   page.evaluate_script('jQuery.active').zero?
+    # end
+  end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -73,6 +87,7 @@ RSpec.configure do |config|
 
   config.use_transactional_fixtures = true
 
+  config.include WaitForAjax, type: :feature
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
