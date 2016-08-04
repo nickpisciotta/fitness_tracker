@@ -4,8 +4,8 @@ class DashboardController < ApplicationController
   end
 
   def show
-    @activity = Activity.new(current_user, params[:date])
-    @meals = Meal.find_meals_by_day(current_user, params[:date])
+    @activity = Activity.new(current_user, params[:date][:Date])
+    @meals = Meal.find_meals_by_day(current_user, params[:date][:Date])
     @goals = current_user.goals.last
     if @goals.nil?
       flash[:notice] = "Please Add Goals"
