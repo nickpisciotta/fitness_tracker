@@ -35,6 +35,7 @@ class GoalsController < ApplicationController
       flash[:success] = "Changes to goals successfully made"
       redirect_to goal_path(@goal)
     else
+      flash[:notice] = "Goals Did Not Save. Make Sure All Fields Are Filled Out"
       render :edit
     end
   end

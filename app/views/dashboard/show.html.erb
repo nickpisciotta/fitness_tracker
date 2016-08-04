@@ -49,15 +49,12 @@
         </progress>
       </li>
       <li class="fitness-data">Total Distance Today: <%= @activity.total_distance_by_day %> miles </li></br>
-      <li class="fitness-data">Resting Heart Rate Today: <%= @activity.resting_heart_rate_by_day %> B.P.M </li>
-    </ul>
-
-
-  </div>
-
-    <ul>
-      <li>Total Hours Sedentary Today: <%= @activity.total_hours_sedentary%> hours </li>
+      <% if @activity.resting_heart_rate_by_day.nil? %>
+        <li class="fitness-data">Resting Heart Rate Today: 0 B.P.M</li></br>
+      <% else %>
+        <li class="fitness-data">Resting Heart Rate Today: <%= @activity.resting_heart_rate_by_day %> B.P.M </li></br>
+      <% end  %>
+      <li class="fitness-data">Total Hours Sedentary Today: <%= @activity.total_hours_sedentary%> hours </li>
     </ul>
   </div>
-
 </div>
