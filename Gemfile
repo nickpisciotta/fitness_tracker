@@ -42,19 +42,22 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'vcr'
   gem 'webmock'
+  gem 'faker'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
-  gem 'rails_12factor'
 end
 
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov'
+  gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 

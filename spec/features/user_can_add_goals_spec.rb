@@ -9,11 +9,10 @@ RSpec.feature "User can add goals" do
 
     fill_in "Total steps", with: "1000"
     fill_in "Total calories burned", with: "1000"
-    fill_in "Total calories", with: "2000"
+    fill_in "goal[total_calories]", with: "2000"
     fill_in "Total protein", with: "100"
     fill_in "Total carbohydrates", with: "200"
     fill_in "Total fat", with: "50"
-
     click_on "Save Goals"
 
     expect(user.goals.count).to eq(1)
@@ -33,6 +32,23 @@ RSpec.feature "User can add goals" do
       expect(page).to have_content("Total Carbohydrates")
       expect(page).to have_content("Total Fat")
     end
-
   end
+
+  scenario "not including all fields in goal form" do
+    user = user_create
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return( user )
+
+    visit new_goal_path
+
+    fill_in "Total steps", with: "1000"
+    fill_in "Total calories burned", with: "1000"
+    fill_in "Total calories", with: "2000"
+    fill_in "Total protein", with: "100"
+    fill_in "Total carbohydrates", with: "200"
+
+    click_on "Save Goals"
+
+    expect(page).to have_content("Goals Did Not Save")
+  end
+
 end

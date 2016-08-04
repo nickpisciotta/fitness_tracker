@@ -1,5 +1,5 @@
-FactoryGirl.define do
-  factory :meal_category do
-    
-  end
-end
+# FactoryGirl.define do
+#   factory :meal_category do
+#
+#   end
+# end

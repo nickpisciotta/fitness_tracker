@@ -11,9 +11,7 @@ RSpec.feature "User edits meal after adding" do
 
     visit new_meal_path
 
-    within(".todaysmeals") do
-      expect(page).to have_content("chicken")
-    end
+    expect(page).to have_content("chicken")
 
     click_on "Edit Entry"
 

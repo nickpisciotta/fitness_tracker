@@ -17,6 +17,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
   # c.configure_rspec_metadata!
+  c.allow_http_connections_when_no_cassette = true
 end
 
 module OmniauthMacros
@@ -40,8 +41,10 @@ end
       display_name: "User1",
       uid: ENV["fitbit_uid"],
       oauth_token: ENV["fitbit_token"],
-      expires_at: 1469777595)
+      refresh_token: ENV["fitbit_refresh_token"],
+      expires_at: 1470366115)
   end
+
 
   def create_meal_categories
     MealCategory.create!(
@@ -61,6 +64,20 @@ end
     end
   end
 
+  module WaitForAjax
+    def wait_for_ajax
+      counter = 0
+      while page.execute_script("return $.active").to_i > 0
+        counter += 1
+        sleep(5)
+        raise "AJAX request took longer than 5 seconds." if counter >= 50
+      end
+    end
+
+    # def finished_all_ajax_requests?
+    #   page.evaluate_script('jQuery.active').zero?
+    # end
+  end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -70,6 +87,7 @@ RSpec.configure do |config|
 
   config.use_transactional_fixtures = true
 
+  config.include WaitForAjax, type: :feature
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.

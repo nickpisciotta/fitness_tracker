@@ -4,10 +4,10 @@ class MealParamsHandler < ActiveRecord::Base
     user.meals.create(quantity: params["quantity"],
                       title: params["title"],
                       meal_category_id: find_meal_category_id(params["category"]),
-                      calorie_total: params["totalCalories"],
-                      carbohydrates_total: params["totalCarbohydrates"],
-                      protein_total:       params["totalProtein"],
-                      fat_total:           params["totalFat"]
+                      calorie_total: params["totalCalories"].to_i * params["quantity"].to_i,
+                      carbohydrates_total: params["totalCarbohydrates"].to_i  * params["quantity"].to_i,
+                      protein_total:       params["totalProtein"].to_i * params["quantity"].to_i,
+                      fat_total:           params["totalFat"].to_i * params["quantity"].to_i
                       )
   end
 
