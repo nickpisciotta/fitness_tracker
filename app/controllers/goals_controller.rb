@@ -1,7 +1,6 @@
 class GoalsController < ApplicationController
 
   def create
-    @user = current_user
     @goal = current_user.goals.new(goal_params)
     if @goal.save
       redirect_to goal_path(@goal)
@@ -16,13 +15,11 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @goal = @user.goals.find_by(id: params[:id])
+    @goal = current_user.goals.find_by(id: params[:id])
   end
 
   def new
-    @user = current_user
-    @goal = @user.goals.new
+    @goal = current_user.goals.new
   end
 
   def edit

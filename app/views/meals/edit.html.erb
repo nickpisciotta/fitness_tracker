@@ -8,11 +8,11 @@
 
         <%= form_for(@meal) do |f| %>
 
-          <%= f.label :quantity  %>
-          <%= f.select :quantity, options_for_select(1..10)   %></br></br> 
+          <%= f.label :quantity, :class=> "meal-quantity-label"  %>
+          <%= f.select :quantity, options_for_select(1..10), :class => 'quantity-select'%></br></br>
 
-          <%= f.label :meal_category_id  %>
-          <%= f.select :meal_category_id, options_for_select(MealCategory.all.collect {|meal_category| meal_category.id})  %></br></br>
+          <%= f.label :meal_category_id, :class=> "meal-quantity-label"  %>
+          <%= f.select :meal_category_id, options_for_select(meal_categories)%></br></br>
 
           <%= f.submit "Save Changes", class: "btn btn-primary update-need" %>
         <% end %>

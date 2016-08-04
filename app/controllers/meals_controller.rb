@@ -13,7 +13,8 @@ class MealsController < ApplicationController
 
   def update
     @meal = Meal.find_by(id: params[:id])
-    if @meal.update(meal_params)
+    if @meal.update!(quantity: params[:meal][:quantity],
+                    meal_category_id: meal_by_category_id(params[:meal][:meal_category_id]))
         redirect_to new_meal_path
     else
       render :edit
@@ -36,5 +37,9 @@ class MealsController < ApplicationController
   private
     def meal_params
       params.require(:meal).permit(:quantity, :meal_category_id)
+    end
+
+    def meal_by_category_id(params)
+      MealCategory.find_by(name: params).id
     end
 end
