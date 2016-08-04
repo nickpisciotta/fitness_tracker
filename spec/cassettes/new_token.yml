@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.fitbit.com/oauth2/token?grant_type=refresh_token&refresh_token=e110f450c59e42146c9391452a372a30abcc32e37eeb8c3ea63979c98dffc9aa
+    uri: https://api.fitbit.com/oauth2/token?grant_type=refresh_token&refresh_token=8caaae7daba133f816e9e35194b43626a70f4c1b15b5f0094b762ffba2bd07f8
     body:
       encoding: UTF-8
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 03 Aug 2016 22:07:40 GMT
+      - Thu, 04 Aug 2016 14:19:07 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -43,11 +43,11 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2ccd15780fb74ff9-DEN
+      - 2cd2a47a31a5501d-DEN
     body:
       encoding: ASCII-8BIT
-      string: '{"access_token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDcwMjkwNzQ1LCJpYXQiOjE0NzAyNjE5NDV9.RuMjQSeFjb6oh7FsUtzke90hP1mpkpTUhLwWudZdC6Q","expires_in":28800,"refresh_token":"9dcf4600e267cb48afd087eabf79f4db153e0e5843e4375fbbcbeb91b141580e","scope":"location
-        activity profile sleep social heartrate","token_type":"Bearer","user_id":"37BVKM"}'
+      string: '{"access_token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDcwMzQ5MTQ3LCJpYXQiOjE0NzAzMjAzNDd9.put3U6zJH3NYlX0SxTrukHTPaYbOC0qiqq3xHaHAjeg","expires_in":28800,"refresh_token":"c79ddf8fde7b7581fdf856cef650663ee2fb9aaf983c99f246ae28f2e0251ebd","scope":"social
+        sleep heartrate activity profile location","token_type":"Bearer","user_id":"37BVKM"}'
     http_version: 
-  recorded_at: Wed, 03 Aug 2016 22:07:40 GMT
+  recorded_at: Thu, 04 Aug 2016 14:19:07 GMT
 recorded_with: VCR 3.0.3
