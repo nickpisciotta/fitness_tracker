@@ -17,6 +17,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
   # c.configure_rspec_metadata!
+  c.allow_http_connections_when_no_cassette = true
 end
 
 module OmniauthMacros
@@ -40,8 +41,10 @@ end
       display_name: "User1",
       uid: ENV["fitbit_uid"],
       oauth_token: ENV["fitbit_token"],
-      expires_at: 1469777595)
+      refresh_token: ENV["fitbit_refresh_token"],
+      expires_at: 1470366115)
   end
+
 
   def create_meal_categories
     MealCategory.create!(

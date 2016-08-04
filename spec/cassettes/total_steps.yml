@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDY5Nzc3MDE2LCJpYXQiOjE0Njk3NDgyMTZ9.o4T0fuGvGYzDhPGyKopGfjfwVt7ikG0Pb6F4VJu6yXc
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDcwMjgyNjE2LCJpYXQiOjE0NzAyNTM4MTZ9.EVEVtbadIZ8fLFB_21s41QVM77VJHdZp9LfYIoSiv5Q
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 29 Jul 2016 02:11:14 GMT
+      - Thu, 04 Aug 2016 03:04:42 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '149'
+      - '147'
       Fitbit-Rate-Limit-Reset:
-      - '2926'
+      - '3318'
       Etag:
       - 46f378e2
       Content-Language:
@@ -47,12 +47,12 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9d09ffa2904fd5-DEN
+      - 2ccec8933ee15005-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-steps":[{"dateTime":"2016-07-27","value":"0"}]}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 02:11:15 GMT
+  recorded_at: Thu, 04 Aug 2016 03:04:42 GMT
 - request:
     method: get
     uri: https://api.fitbit.com/1/user/-/activities/steps/date/2016-07-27/1d.json
@@ -63,7 +63,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDY5Nzc3MDE2LCJpYXQiOjE0Njk3NDgyMTZ9.o4T0fuGvGYzDhPGyKopGfjfwVt7ikG0Pb6F4VJu6yXc
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDcwMjgyNjE2LCJpYXQiOjE0NzAyNTM4MTZ9.EVEVtbadIZ8fLFB_21s41QVM77VJHdZp9LfYIoSiv5Q
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -74,7 +74,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 29 Jul 2016 02:11:14 GMT
+      - Thu, 04 Aug 2016 03:04:42 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -86,9 +86,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '148'
+      - '146'
       Fitbit-Rate-Limit-Reset:
-      - '2926'
+      - '3318'
       Etag:
       - 46f378e2
       Content-Language:
@@ -100,10 +100,10 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9d0a019cbd4ff9-DEN
+      - 2ccec893f9de4fed-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-steps":[{"dateTime":"2016-07-27","value":"0"}]}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 02:11:15 GMT
+  recorded_at: Thu, 04 Aug 2016 03:04:42 GMT
 recorded_with: VCR 3.0.3

@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDY5Nzc3MDE2LCJpYXQiOjE0Njk3NDgyMTZ9.o4T0fuGvGYzDhPGyKopGfjfwVt7ikG0Pb6F4VJu6yXc
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDcwMjgyNjE2LCJpYXQiOjE0NzAyNTM4MTZ9.EVEVtbadIZ8fLFB_21s41QVM77VJHdZp9LfYIoSiv5Q
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 29 Jul 2016 02:11:59 GMT
+      - Thu, 04 Aug 2016 03:04:43 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '141'
+      - '139'
       Fitbit-Rate-Limit-Reset:
-      - '2881'
+      - '3317'
       Etag:
       - 8bbca7ec
       Content-Language:
@@ -47,13 +47,13 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9d0b1a6ac74fe1-DEN
+      - 2ccec89949ea501d-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-heart":[{"dateTime":"2016-07-27","value":{"customHeartRateZones":[],"heartRateZones":[{"max":94,"min":30,"name":"Out
         of Range"},{"max":131,"min":94,"name":"Fat Burn"},{"max":159,"min":131,"name":"Cardio"},{"max":220,"min":159,"name":"Peak"}]}}]}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 02:12:00 GMT
+  recorded_at: Thu, 04 Aug 2016 03:04:43 GMT
 - request:
     method: get
     uri: https://api.fitbit.com/1/user/-/activities/heart/date/2016-07-27/1d.json
@@ -64,7 +64,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDY5Nzc3MDE2LCJpYXQiOjE0Njk3NDgyMTZ9.o4T0fuGvGYzDhPGyKopGfjfwVt7ikG0Pb6F4VJu6yXc
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzN0JWS00iLCJhdWQiOiIyMjdSNkIiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcmxvYyByaHIgcnBybyByc2xlIiwiZXhwIjoxNDcwMjgyNjE2LCJpYXQiOjE0NzAyNTM4MTZ9.EVEVtbadIZ8fLFB_21s41QVM77VJHdZp9LfYIoSiv5Q
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -75,7 +75,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 29 Jul 2016 02:12:00 GMT
+      - Thu, 04 Aug 2016 03:04:43 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -87,9 +87,9 @@ http_interactions:
       Fitbit-Rate-Limit-Limit:
       - '150'
       Fitbit-Rate-Limit-Remaining:
-      - '140'
+      - '138'
       Fitbit-Rate-Limit-Reset:
-      - '2880'
+      - '3317'
       Etag:
       - 8bbca7ec
       Content-Language:
@@ -101,11 +101,11 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2c9d0b1bdcd45029-DEN
+      - 2ccec899c9f2501d-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"activities-heart":[{"dateTime":"2016-07-27","value":{"customHeartRateZones":[],"heartRateZones":[{"max":94,"min":30,"name":"Out
         of Range"},{"max":131,"min":94,"name":"Fat Burn"},{"max":159,"min":131,"name":"Cardio"},{"max":220,"min":159,"name":"Peak"}]}}]}'
     http_version: 
-  recorded_at: Fri, 29 Jul 2016 02:12:00 GMT
+  recorded_at: Thu, 04 Aug 2016 03:04:43 GMT
 recorded_with: VCR 3.0.3

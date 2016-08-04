@@ -6,6 +6,7 @@ class GoalsController < ApplicationController
     if @goal.save
       redirect_to goal_path(@goal)
     else
+      flash[:notice] = "Goals Did Not Save.  Make Sure All Fields Are Filled Out"
       render :new
     end
   end

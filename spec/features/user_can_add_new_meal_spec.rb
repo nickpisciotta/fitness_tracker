@@ -8,13 +8,15 @@ RSpec.feature "User adds meal to database" do
 
     visit new_meal_path
 
-    fill_in "Title", with: "large chicken breast"
+    fill_in "meal[title]", with: "large egg"
     select 1, from: "meal[quantity]"
 
-    select "1", from: "meal[meal_category_id]"
-    click_on "Add Item"
+    select "Breakfast", from: "meal[meal_category_id]"
+
+    click_on "Add Food"
+
 
     expect(user.meals.count).to eq(1)
-    expect(user.meals.first.meal_category_id). to eq(1)
+    expect(user.meals.first.meal_category_id).to eq(1)
   end
 end

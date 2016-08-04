@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
 
   def self.update_user_access_token(user, response)
     user_id = response["user_id"]
-    new_access_token = ["access_token"]
-    new_refresh_token = ["refresh_token"]
+    new_access_token = response["access_token"]
+    new_refresh_token = response["refresh_token"]
     new_expiration_time = user.expires_at + response["expires_in"]
     user.update(oauth_token: new_access_token)
     user.update(refresh_token: new_refresh_token)

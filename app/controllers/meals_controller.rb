@@ -7,6 +7,7 @@ class MealsController < ApplicationController
   end
 
   def create
+    byebug
     meal = MealParamsHandler.set_meal_attributes(current_user, params[:meal_info])
     render json: meal
   end

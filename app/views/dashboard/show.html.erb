@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-0">
-    <h1 class='text-center'>Meal Stats</h1>
+    <h1 class='text-center meal-stats'>Meal Stats</h1>
     <ul class="meal-progress">
       <li class="meal">
         <h3>Calorie Progress:</br> <%=@meals.calorie_sum%>cals/ <%= @goals.total_calories %>cals</h3>
@@ -33,7 +33,7 @@
   </div>
 
   <div class="col-md-6 col-md-offset-0">
-    <h1 class='text-center'>Fitness Stats</h1>
+    <h1 class='text-center fitness-stats'>Fitness Stats</h1>
     <ul class="fitness-progress">
       <li class="fitness">
         <h3>Total Steps Progress:</br> <%= @activity.total_steps_by_day %>/ <%= @goals.total_steps %></h3>
