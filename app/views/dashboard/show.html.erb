@@ -17,17 +17,21 @@
       </li>
 
       <li class="meal">
+
         <h3>Carbohydrate Progress:</br> <%=@meals.carbohyrate_sum %>g/ <%=@goals.total_carbohydrates %>g</h3>
         <progress class="meal-3" max="<%= @goals.total_carbohydrates %>" value="<%= @meals.carbohyrate_sum %>">
           <strong>Carbohydrate Progress:</strong>
         </progress>
+
       </li>
 
       <li class="meal">
+
         <h3>Fat Progress:</br> <%= @meals.fat_sum %>g/ <%= @goals.total_fat %>g</h3>
         <progress class="meal-4" max="<%= @goals.total_fat %>" value="<%= @meals.fat_sum %>">
           <strong>Fat Progress:</strong>
         </progress>
+
       </li>
     </ul>
   </div>
@@ -36,10 +40,12 @@
     <h1 class='text-center fitness-stats'>Fitness Stats</h1>
     <ul class="fitness-progress">
       <li class="fitness">
+
         <h3>Total Steps Progress:</br> <%= @activity.total_steps_by_day %>/ <%= @goals.total_steps %></h3>
         <progress class="fitness-1" max="<%= @goals.total_steps %>" value="<%= @activity.total_steps_by_day %>">
           <strong>Total Steps Progress:</strong>
         </progress>
+
       </li>
 
       <li class="fitness">

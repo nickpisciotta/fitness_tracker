@@ -10,6 +10,7 @@ $(document).ready(function(){
       data: {app_id: "<%= ENV['edamam_app_id'] %>", app_key: "<%= ENV['edamam_app_key'] %>", ingr: mealTitle },
       dataType: "jsonp",
       success: function (data) {
+
         if (data.totalNutrients.CHOCDF) {
           var postData = {meal_info: {totalCalories: data.calories,
             totalCarbohydrates: Math.round(data.totalNutrients.CHOCDF.quantity),
